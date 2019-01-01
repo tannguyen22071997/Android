@@ -36,6 +36,7 @@ public class PartActivity extends AppCompatActivity {
         TextView textViewlop = findViewById(R.id.textViewlop);
         textViewlop.setText("lớp" + lop);
         partArrayList = database.getListPart(lop);
+        database.close();
         partAdapter = new PartAdapter(this, R.layout.custom_row_part, partArrayList);
         listView.setAdapter(partAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
