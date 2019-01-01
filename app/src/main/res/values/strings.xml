@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Translate</string>
+    <string-array name="list_lop">
+        <item>lop3</item>
+        <item>lop4</item>
+        <item>lop5</item>
+        <item>lop6</item>
+        <item>lop7</item>
+        <item>lop8</item>
+        <item>lop9</item>
+        <item>lop10</item>
+        <item>lop11</item>
+        <item>lop12</item>
+    </string-array>
+</resources>

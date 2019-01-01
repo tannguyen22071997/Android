@@ -1,0 +1,17 @@
+1=go=đi=ɡəʊ=Verb=http://audio.oxforddictionaries.com/en/mp3/go_gb_1.mp3=1
+2=eat=an=iːt=Verb=http://audio.oxforddictionaries.com/en/mp3/eat_gb_1.mp3=1
+3=am=là=am=Other=http://audio.oxforddictionaries.com/en/mp3/am_gb_5.mp3=1
+4=and=và=ənd=Conjunction=http://audio.oxforddictionaries.com/en/mp3/and_gb_1.mp3=1
+5=bye=tạm biệt=bʌɪ=Noun=http://audio.oxforddictionaries.com/en/mp3/bye_gb_1.mp3=1
+6=fine=khỏe=fʌɪn=Adjective=http://audio.oxforddictionaries.com/en/mp3/fine_gb_1.mp3=1
+7=goodbye=Tạm biệt=ɡʊdˈbʌɪ=Interjection=http://audio.oxforddictionaries.com/en/mp3/goodbye_gb_1.mp3=1
+8=hello=xin chào=həˈləʊ=Interjection=http://audio.oxforddictionaries.com/en/mp3/hello_gb_1.mp3=1
+9=hi=Chào=hʌɪ=Interjection=http://audio.oxforddictionaries.com/en/mp3/hi_gb_1.mp3=1
+10=miss=bỏ lỡ=mɪs=Verb=http://audio.oxforddictionaries.com/en/mp3/miss_gb_1.mp3=1
+11=talk=nói chuyện=tɔːk=Verb=http://audio.oxforddictionaries.com/en/mp3/talk_gb_1.mp3=2
+12=thank=cảm tạ=θaŋk=Verb=http://audio.oxforddictionaries.com/en/mp3/thank_gb_1.mp3=2
+13=morning=buổi sáng=ˈmɔːnɪŋ=Noun=http://audio.oxforddictionaries.com/en/mp3/morning_gb_1.mp3=2
+14=afternoon=buổi chiều=ɑːftəˈnuːn=Noun=http://audio.oxforddictionaries.com/en/mp3/afternoon_gb_1.mp3=2
+15=night=đêm=nʌɪt=Noun=http://audio.oxforddictionaries.com/en/mp3/night_gb_1.mp3=2
+16=tomorrow=Ngày mai=təˈmɒrəʊ=Adverb=http://audio.oxforddictionaries.com/en/mp3/tomorrow_gb_1.mp3=2
+17=later=một lát sau=ˈleɪtə=Adjective=http://audio.oxforddictionaries.com/en/mp3/later_gb_1.mp3=2

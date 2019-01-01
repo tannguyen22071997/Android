@@ -1,0 +1,15 @@
+3=lop3=school
+4=lop4=school
+5=lop5=school
+6=lop6=shool
+7=lop7=school
+8=lop8=school
+9=lop9=school
+10=lop10=school
+11=lop11=school
+12=lop12=school
+13=TOEIC=up
+14=IELTS=up
+15=TOEFL=up
+16=SAT=up
+17=B1=up

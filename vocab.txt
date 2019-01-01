@@ -1,0 +1,2 @@
+2 go di gou v C:/go.mp3 3
+2 eat an it v C:/an.mp3 4
