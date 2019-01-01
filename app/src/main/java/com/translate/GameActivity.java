@@ -39,6 +39,7 @@ public class GameActivity extends AppCompatActivity {
         buttonda1 = findViewById(R.id.buttonda1);
         buttonda2 = findViewById(R.id.buttonda2);
         buttonda3 = findViewById(R.id.buttonda3);
+
         seekBar = findViewById(R.id.seekBar);
         textViewvocabu = findViewById(R.id.textViewvocabu);
         game(vocabularyList.get(positon));
