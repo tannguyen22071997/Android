@@ -26,6 +26,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     ArrayList<Button> buttonArrayList;
     Button buttonHoc;
+    Button buttontrans;
     Database database;
 
     private void insertData(Database database) {
@@ -89,6 +90,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 createDialog();
+            }
+        });
+        buttontrans=findViewById(R.id.buttontrans);
+        buttontrans.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,TanslateActivity.class);
+                startActivity(intent);
+
             }
         });
     }
