@@ -55,7 +55,7 @@ public class PartAdapter extends BaseAdapter {
             viewHolder= (ViewHolder) convertView.getTag();
         }
         Part part=partList.get(position);
-        viewHolder.textViewId.setText(part.getId()+"");
+        viewHolder.textViewId.setText(position+"");
         viewHolder.textViewName.setText(part.getName());
         return convertView;
     }

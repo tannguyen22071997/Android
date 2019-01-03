@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="40dp"
-        android:text="Chọn ngôn ngữ:"
+        android:layout_marginTop="60dp"
+        android:text="English:"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,65 +31,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewvb" />
 
 
-    <Button
-        android:id="@+id/buttonclgvb"
-        android:layout_width="60dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="40dp"
-        android:text="EN"
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/textViewvb"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageViewcd"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="33dp"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toEndOf="@+id/buttondich"
-        app:layout_constraintTop_toBottomOf="@+id/editTextvb"
-        app:srcCompat="@drawable/chuyendoi" />
-
-    <TextView
-        android:id="@+id/textViewbd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="30dp"
-        android:text="Bản dịch"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttondich" />
-
-    <Button
-        android:id="@+id/buttonclgbd"
-        android:layout_width="60dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="20dp"
-        android:text="VI"
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/textViewcnn"
-        app:layout_constraintTop_toBottomOf="@+id/textViewbd" />
-
     <TextView
         android:id="@+id/textViewcnn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
-        android:text="Chọn ngôn ngữ:"
+        android:layout_marginTop="30dp"
+        android:text="Tiếng Việt"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewbd" />
+        app:layout_constraintTop_toBottomOf="@+id/buttondich" />
 
     <EditText
         android:id="@+id/editTextbd"
@@ -113,5 +65,7 @@
         android:text="Dịch"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextvb" />
+
+
 
 </android.support.constraint.ConstraintLayout>

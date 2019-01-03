@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/themet" />
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -25,21 +36,23 @@
         tools:ignore="MissingConstraints" />
 
     <SeekBar
+        android:outlineAmbientShadowColor="#e60d0d"
+        android:outlineSpotShadowColor="#176ade"
         android:id="@+id/seekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
         android:max="90"
         app:layout_constraintTop_toBottomOf="@+id/textViewvocabu"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="250dp"
+        android:layout_width="230dp"
         android:layout_height="300dp"
         android:layout_marginStart="42dp"
         android:layout_marginLeft="42dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="42dp"
         android:layout_marginRight="42dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,13 +60,13 @@
         app:layout_constraintTop_toBottomOf="@+id/seekBar">
 
         <Button
-
             android:id="@+id/buttonda1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/custom_button_nangcao"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom_button_answer"
             android:text="Button"
+            android:textColor="#8b0517"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="75dp" />
@@ -63,8 +76,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/custom_button_nangcao"
+            android:background="@drawable/custom_button_answer"
             android:text="Button"
+            android:textColor="#8b0517"
             app:layout_constraintTop_toBottomOf="@+id/buttonda1"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="66dp" />
@@ -74,9 +88,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:background="@drawable/custom_button_answer"
 
-            android:background="@drawable/custom_button_nangcao"
             android:text="Button"
+            android:textColor="#8b0517"
             app:layout_constraintTop_toBottomOf="@+id/buttonda2" />
 
         <TextView
@@ -85,10 +100,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="1dp"
             android:layout_marginLeft="1dp"
-            android:layout_marginTop="16dp"
-            android:text="Chon Dap an"
-            android:textSize="24sp"
+            android:layout_marginTop="10dp"
+            android:text="Dáp án :"
+            android:textColor="#ce0a24"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
-</android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout></FrameLayout>

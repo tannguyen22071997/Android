@@ -17,6 +17,7 @@ import com.translate.model.Part;
 import com.translate.model.Vocabulary;
 
 import java.util.List;
+import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
     List<Vocabulary> vocabularyList;
@@ -42,25 +43,55 @@ public class GameActivity extends AppCompatActivity {
 
         seekBar = findViewById(R.id.seekBar);
         textViewvocabu = findViewById(R.id.textViewvocabu);
+
+
         game(vocabularyList.get(positon));
 
         buttonda1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 countDownTimer.cancel();
-                positon++;
-                if (positon == vocabularyList.size()) {
+
+                if (positon == vocabularyList.size()/*||!buttonda1.getText().equals(vocabularyList.get(positon).getMean())*/) {
                     createdialog();
-                } else {
+                } else if (buttonda1.getText().equals(vocabularyList.get(positon).getMean())) {
+                    positon++;
                     game(vocabularyList.get(positon));
+                }else{
+                    createdialog();
                 }
             }
         });
         buttonda2.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View v) {
+                countDownTimer.cancel();
+
+                if (positon == vocabularyList.size()/*||!buttonda2.getText().equals(vocabularyList.get(positon).getMean())*/) {
+                    createdialog();
+                } else if (buttonda2.getText().equals(vocabularyList.get(positon).getMean())) {
+                    positon++;
+                    game(vocabularyList.get(positon));
+                }else
+                    createdialog();
             }
         });
+        buttonda3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                countDownTimer.cancel();
+
+                if (positon == vocabularyList.size()) {
+                    createdialog();
+                } else if (buttonda3.getText().equals(vocabularyList.get(positon).getMean())) {
+                    positon++;
+                    game(vocabularyList.get(positon));
+                }else
+                    createdialog();
+            }
+        });
+
 
     }
 
@@ -70,29 +101,51 @@ public class GameActivity extends AppCompatActivity {
         dialog.setCanceledOnTouchOutside(false);
         dialog.setContentView(R.layout.dialog_part);
         dialog.show();
-
-
     }
 
-    int count = 0;
+    private void randomanswer(Random random) {
+        int answer1 = 0, answer2 = 0;
+        boolean check = true;
+        while (check) {
+            answer1 = random.nextInt(vocabularyList.size());
+            answer2 = random.nextInt(vocabularyList.size());
+            if (answer1 != positon && answer2 != positon && answer1 != answer2)
+                check = false;
+        }
+        Vocabulary answerv1 = vocabularyList.get(answer1);
+        Vocabulary answerv2 = vocabularyList.get(answer2);
+        Vocabulary answerv3 = vocabularyList.get(positon);
+        int r1 = random.nextInt(2);
+        if (r1 == 0) {
+            buttonda1.setText(answerv1.getMean());
+            buttonda2.setText(answerv2.getMean());
+            buttonda3.setText(answerv3.getMean());
+        } else if (r1 == 1) {
+            buttonda1.setText(answerv1.getMean());
+            buttonda3.setText(answerv2.getMean());
+            buttonda2.setText(answerv3.getMean());
+        } else if (r1 == 2) {
+            buttonda3.setText(answerv1.getMean());
+            buttonda2.setText(answerv2.getMean());
+            buttonda1.setText(answerv3.getMean());
+        }
+    }
 
     private void game(Vocabulary vocabulary) {
-
         textViewvocabu.setText(vocabulary.getWord());
-        buttonda1.setText(vocabulary.getMean());
+        Random random = new Random();
+        randomanswer(random);
         seekBar.setProgress(0);
         countDownTimer = new CountDownTimer(5000, 50) {
-
             @Override
             public void onTick(long millisUntilFinished) {
                 int i = seekBar.getProgress();
                 seekBar.setProgress(i + 1);
-
             }
 
             @Override
             public void onFinish() {
-                createdialog();
+//                createdialog();
             }
         }.start();
 

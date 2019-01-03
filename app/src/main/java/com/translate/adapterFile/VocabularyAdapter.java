@@ -74,7 +74,6 @@ public class VocabularyAdapter extends BaseAdapter {
             @Override
 
             public void onClick(View v) {
-                Toast.makeText(context, url, Toast.LENGTH_SHORT).show();
                 MediaPlayer mediaPlayer=new MediaPlayer();
                 mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                 try {
