@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 createDialog();
-                dialog.cancel();
 
             }
         });
@@ -150,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
                     intent.putExtra("lop", finalI);
                     startActivity(intent);
+                    dialog.cancel();
                 }
             });
         }

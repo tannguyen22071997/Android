@@ -12,6 +12,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.translate.data.Database;
 import com.translate.model.Part;
@@ -29,6 +30,7 @@ public class GameActivity extends AppCompatActivity {
     SeekBar seekBar;
     TextView textViewvocabu;
     CountDownTimer countDownTimer;
+    Part part;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,7 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         Intent intent = getIntent();
         Database database = new Database(this, "translate.sqlite", null, 1);
-        Part part = (Part) intent.getSerializableExtra("part");
+        part = (Part) intent.getSerializableExtra("part");
         vocabularyList = database.getListVocabu(part.getId());
         buttonda1 = findViewById(R.id.buttonda1);
         buttonda2 = findViewById(R.id.buttonda2);
@@ -52,16 +54,15 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 countDownTimer.cancel();
-
                 if (positon == vocabularyList.size() - 1) {
-                    createdialog();
+                    createdialog(1);
                 } else if (buttonda1.getText().equals(vocabularyList.get(positon).getMean())) {
                     positon++;
                     if (positon < vocabularyList.size()) {
                         game(vocabularyList.get(positon));
                     }
                 } else {
-                    createdialog();
+                    createdialog(2);
                 }
             }
         });
@@ -70,32 +71,30 @@ public class GameActivity extends AppCompatActivity {
 
             public void onClick(View v) {
                 countDownTimer.cancel();
-
-                if (positon == vocabularyList.size()/*||!buttonda2.getText().equals(vocabularyList.get(positon).getMean())*/) {
-                    createdialog();
+                if (positon == vocabularyList.size()-1/*||!buttonda2.getText().equals(vocabularyList.get(positon).getMean())*/) {
+                    createdialog(1);
                 } else if (buttonda2.getText().equals(vocabularyList.get(positon).getMean())) {
                     positon++;
                     if (positon < vocabularyList.size()) {
                         game(vocabularyList.get(positon));
                     }
                 } else
-                    createdialog();
+                    createdialog(2);
             }
         });
         buttonda3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 countDownTimer.cancel();
-
-                if (positon == vocabularyList.size()) {
-                    createdialog();
+                if (positon == vocabularyList.size()-1) {
+                    createdialog(1);
                 } else if (buttonda3.getText().equals(vocabularyList.get(positon).getMean())) {
                     positon++;
                     if (positon < vocabularyList.size()) {
                         game(vocabularyList.get(positon));
                     }
                 } else
-                    createdialog();
+                    createdialog(2);
             }
         });
 
@@ -110,18 +109,43 @@ public class GameActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()==R.id.home){
-            Intent intenth=new Intent(GameActivity.this,MainActivity.class);
+        if (item.getItemId() == R.id.home) {
+            Intent intenth = new Intent(GameActivity.this, MainActivity.class);
             startActivity(intenth);
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private void createdialog() {
+    private void createdialog(int i) {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCanceledOnTouchOutside(false);
-        dialog.setContentView(R.layout.dialog_win);
+
+        if (i == 1) {
+            dialog.setContentView(R.layout.dialog_win);
+            Button button = dialog.findViewById(R.id.button);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(GameActivity.this, PartActivity.class);
+                    intent.putExtra("lop", part.getIdClass());
+                    startActivity(intent);
+                    dialog.cancel();
+                }
+            });
+        } else if (i == 2) {
+            dialog.setContentView(R.layout.dialog_lose);
+            Button button = dialog.findViewById(R.id.buttontt);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(GameActivity.this, GameActivity.class);
+                    intent.putExtra("part", part);
+                    startActivity(intent);
+                    dialog.cancel();
+                }
+            });
+        }
         dialog.show();
     }
 
@@ -168,7 +192,7 @@ public class GameActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-//                createdialog();
+                createdialog(2);
             }
         }.start();
 
