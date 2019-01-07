@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     Button buttonHoc;
     Button buttontrans;
     Database database;
+    Dialog dialog;
 
     private void insertData(Database database) {
         Resources resources = getResources();
@@ -64,13 +65,12 @@ public class MainActivity extends AppCompatActivity {
         database.close();
         buttonHoc = findViewById(R.id.buttonth);
         String[] manglop = getResources().getStringArray(R.array.list_lop);
-        Button buttonnc=findViewById(R.id.buttonnc);
+        Button buttonnc = findViewById(R.id.buttonnc);
         buttonnc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "http://audio.oxforddictionaries.com/en/mp3/go_gb_1.mp3"; // your URL here
-                String url2="https://khoapham.vn/download/vietnamoi.mp3";
-                MediaPlayer mediaPlayer=new MediaPlayer();
+                String url2 = "https://khoapham.vn/download/vietnamoi.mp3";
+                MediaPlayer mediaPlayer = new MediaPlayer();
                 mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                 try {
                     mediaPlayer.setDataSource(url2);
@@ -90,13 +90,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 createDialog();
+                dialog.cancel();
+
             }
         });
-        buttontrans=findViewById(R.id.buttontrans);
+        buttontrans = findViewById(R.id.buttontrans);
         buttontrans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,TanslateActivity.class);
+                Intent intent = new Intent(MainActivity.this, TanslateActivity.class);
                 startActivity(intent);
 
             }
@@ -118,6 +120,13 @@ public class MainActivity extends AppCompatActivity {
         Button button10 = dialog.findViewById(R.id.buttonlop10);
         Button button11 = dialog.findViewById(R.id.buttonlop11);
         Button button12 = dialog.findViewById(R.id.buttonlop12);
+        Button buttoncancel=dialog.findViewById(R.id.buttoncancel);
+        buttoncancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
         buttonArrayList = new ArrayList<>();
         buttonArrayList.add(button3);
         buttonArrayList.add(button4);
@@ -139,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, PartActivity.class);
 
-                    intent.putExtra("lop",finalI);
+                    intent.putExtra("lop", finalI);
                     startActivity(intent);
                 }
             });

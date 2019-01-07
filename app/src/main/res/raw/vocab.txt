@@ -4,9 +4,7 @@
 4=and=và=ənd=Conjunction=http://audio.oxforddictionaries.com/en/mp3/and_gb_1.mp3=1
 5=bye=tạm biệt=bʌɪ=Noun=http://audio.oxforddictionaries.com/en/mp3/bye_gb_1.mp3=1
 6=fine=khỏe=fʌɪn=Adjective=http://audio.oxforddictionaries.com/en/mp3/fine_gb_1.mp3=1
-7=goodbye=Tạm biệt=ɡʊdˈbʌɪ=Interjection=http://audio.oxforddictionaries.com/en/mp3/goodbye_gb_1.mp3=1
 8=hello=xin chào=həˈləʊ=Interjection=http://audio.oxforddictionaries.com/en/mp3/hello_gb_1.mp3=1
-9=hi=Chào=hʌɪ=Interjection=http://audio.oxforddictionaries.com/en/mp3/hi_gb_1.mp3=1
 10=miss=bỏ lỡ=mɪs=Verb=http://audio.oxforddictionaries.com/en/mp3/miss_gb_1.mp3=1
 11=talk=nói chuyện=tɔːk=Verb=http://audio.oxforddictionaries.com/en/mp3/talk_gb_1.mp3=2
 12=thank=cảm tạ=θaŋk=Verb=http://audio.oxforddictionaries.com/en/mp3/thank_gb_1.mp3=2

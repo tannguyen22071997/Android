@@ -66,7 +66,7 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/custom_button_answer"
             android:text="Button"
-            android:textColor="#8b0517"
+            android:textColor="#fff"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="75dp" />
@@ -78,7 +78,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/custom_button_answer"
             android:text="Button"
-            android:textColor="#8b0517"
+            android:textColor="#fff"
             app:layout_constraintTop_toBottomOf="@+id/buttonda1"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="66dp" />
@@ -91,7 +91,7 @@
             android:background="@drawable/custom_button_answer"
 
             android:text="Button"
-            android:textColor="#8b0517"
+            android:textColor="#fff"
             app:layout_constraintTop_toBottomOf="@+id/buttonda2" />
 
         <TextView

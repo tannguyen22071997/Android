@@ -5,12 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.translate.data.Database;
 import com.translate.model.Part;
@@ -35,7 +36,7 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         Intent intent = getIntent();
         Database database = new Database(this, "translate.sqlite", null, 1);
-        final Part part = (Part) intent.getSerializableExtra("part");
+        Part part = (Part) intent.getSerializableExtra("part");
         vocabularyList = database.getListVocabu(part.getId());
         buttonda1 = findViewById(R.id.buttonda1);
         buttonda2 = findViewById(R.id.buttonda2);
@@ -52,12 +53,14 @@ public class GameActivity extends AppCompatActivity {
             public void onClick(View v) {
                 countDownTimer.cancel();
 
-                if (positon == vocabularyList.size()/*||!buttonda1.getText().equals(vocabularyList.get(positon).getMean())*/) {
+                if (positon == vocabularyList.size() - 1) {
                     createdialog();
                 } else if (buttonda1.getText().equals(vocabularyList.get(positon).getMean())) {
                     positon++;
-                    game(vocabularyList.get(positon));
-                }else{
+                    if (positon < vocabularyList.size()) {
+                        game(vocabularyList.get(positon));
+                    }
+                } else {
                     createdialog();
                 }
             }
@@ -72,8 +75,10 @@ public class GameActivity extends AppCompatActivity {
                     createdialog();
                 } else if (buttonda2.getText().equals(vocabularyList.get(positon).getMean())) {
                     positon++;
-                    game(vocabularyList.get(positon));
-                }else
+                    if (positon < vocabularyList.size()) {
+                        game(vocabularyList.get(positon));
+                    }
+                } else
                     createdialog();
             }
         });
@@ -86,8 +91,10 @@ public class GameActivity extends AppCompatActivity {
                     createdialog();
                 } else if (buttonda3.getText().equals(vocabularyList.get(positon).getMean())) {
                     positon++;
-                    game(vocabularyList.get(positon));
-                }else
+                    if (positon < vocabularyList.size()) {
+                        game(vocabularyList.get(positon));
+                    }
+                } else
                     createdialog();
             }
         });
@@ -95,11 +102,26 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.home){
+            Intent intenth=new Intent(GameActivity.this,MainActivity.class);
+            startActivity(intenth);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void createdialog() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCanceledOnTouchOutside(false);
-        dialog.setContentView(R.layout.dialog_part);
+        dialog.setContentView(R.layout.dialog_win);
         dialog.show();
     }
 
@@ -109,13 +131,14 @@ public class GameActivity extends AppCompatActivity {
         while (check) {
             answer1 = random.nextInt(vocabularyList.size());
             answer2 = random.nextInt(vocabularyList.size());
-            if (answer1 != positon && answer2 != positon && answer1 != answer2)
-                check = false;
+            if (answer1 != positon && answer2 != positon)
+                if (answer1 != answer2)
+                    check = false;
         }
         Vocabulary answerv1 = vocabularyList.get(answer1);
         Vocabulary answerv2 = vocabularyList.get(answer2);
         Vocabulary answerv3 = vocabularyList.get(positon);
-        int r1 = random.nextInt(2);
+        int r1 = random.nextInt(3);
         if (r1 == 0) {
             buttonda1.setText(answerv1.getMean());
             buttonda2.setText(answerv2.getMean());

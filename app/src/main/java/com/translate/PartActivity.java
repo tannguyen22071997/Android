@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -47,6 +49,11 @@ public class PartActivity extends AppCompatActivity {
         });
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
     private void createdialog(final Part part) {
         final Dialog dialog = new Dialog(this);
@@ -60,6 +67,7 @@ public class PartActivity extends AppCompatActivity {
                 Intent intent = new Intent(PartActivity.this, VocabularyActivity.class);
                 intent.putExtra("part", part);
                 startActivity(intent);
+                dialog.cancel();
             }
         });
         Button buttongame = dialog.findViewById(R.id.btngame);
@@ -69,10 +77,19 @@ public class PartActivity extends AppCompatActivity {
                 Intent intent = new Intent(PartActivity.this, GameActivity.class);
                 intent.putExtra("part", part);
                 startActivity(intent);
+                dialog.cancel();
             }
         });
         textView.setText(part.getName());
         dialog.show();
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.home){
+            Intent intenth=new Intent(PartActivity.this,MainActivity.class);
+            startActivity(intenth);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
