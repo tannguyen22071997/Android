@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     Button buttonHoc;
     Button buttontrans;
     Database database;
-    Dialog dialog;
 
     private void insertData(Database database) {
         Resources resources = getResources();
@@ -69,21 +68,8 @@ public class MainActivity extends AppCompatActivity {
         buttonnc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url2 = "https://khoapham.vn/download/vietnamoi.mp3";
-                MediaPlayer mediaPlayer = new MediaPlayer();
-                mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                try {
-                    mediaPlayer.setDataSource(url2);
-                    mediaPlayer.prepareAsync();
-                    mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                        @Override
-                        public void onPrepared(MediaPlayer mp) {
-                            mp.start();
-                        }
-                    });
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                Intent intent=new Intent(MainActivity.this,NangcaoActivity.class);
+                startActivity(intent);
             }
         });
         buttonHoc.setOnClickListener(new View.OnClickListener() {
@@ -104,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void createDialog() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -119,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         Button button10 = dialog.findViewById(R.id.buttonlop10);
         Button button11 = dialog.findViewById(R.id.buttonlop11);
         Button button12 = dialog.findViewById(R.id.buttonlop12);
-        Button buttoncancel=dialog.findViewById(R.id.buttoncancel);
+        Button buttoncancel = dialog.findViewById(R.id.buttoncancel);
         buttoncancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -140,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
         int i = 2;
         for (Button button : buttonArrayList) {
             i++;
-            final String text = button.getText().toString();
             final int finalI = i;
             button.setOnClickListener(new View.OnClickListener() {
                 @Override

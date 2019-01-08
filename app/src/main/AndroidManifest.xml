@@ -21,7 +21,8 @@
         <activity android:name=".PartActivity" />
         <activity android:name=".VocabularyActivity" />
         <activity android:name=".GameActivity" />
-        <activity android:name=".TanslateActivity"></activity>
+        <activity android:name=".TanslateActivity" />
+        <activity android:name=".NangcaoActivity"></activity>
     </application>
 
 </manifest>

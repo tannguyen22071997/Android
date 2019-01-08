@@ -108,6 +108,7 @@ public class Database extends SQLiteOpenHelper {
 
     }
 
+
     public List<Part> getListPart(int id) {
         List<Part> partList = new ArrayList<>();
         String sql = "select * from Part where IdClass=" + id + "";

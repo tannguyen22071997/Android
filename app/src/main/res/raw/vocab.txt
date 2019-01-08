@@ -12,4 +12,8 @@
 14=afternoon=buổi chiều=ɑːftəˈnuːn=Noun=http://audio.oxforddictionaries.com/en/mp3/afternoon_gb_1.mp3=2
 15=night=đêm=nʌɪt=Noun=http://audio.oxforddictionaries.com/en/mp3/night_gb_1.mp3=2
 16=tomorrow=Ngày mai=təˈmɒrəʊ=Adverb=http://audio.oxforddictionaries.com/en/mp3/tomorrow_gb_1.mp3=2
-17=later=một lát sau=ˈleɪtə=Adjective=http://audio.oxforddictionaries.com/en/mp3/later_gb_1.mp3=2
+17=later=một lát sau=ˈleɪtə=Adjective=http://audio.oxforddictionaries.com/en/mp3/later_gb_1.mp3=19
+18=afternoon=buổi chiều=ɑːftəˈnuːn=Noun=http://audio.oxforddictionaries.com/en/mp3/afternoon_gb_1.mp3=19
+19=night=đêm=nʌɪt=Noun=http://audio.oxforddictionaries.com/en/mp3/night_gb_1.mp3=19
+20=tomorrow=Ngày mai=təˈmɒrəʊ=Adverb=http://audio.oxforddictionaries.com/en/mp3/tomorrow_gb_1.mp3=19
+21=later=một lát sau=ˈleɪtə=Adjective=http://audio.oxforddictionaries.com/en/mp3/later_gb_1.mp3=19
